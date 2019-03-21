@@ -6,14 +6,19 @@
 #    By: jcarpio- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/02 13:30:58 by jcarpio-          #+#    #+#              #
-#    Updated: 2019/03/16 17:52:11 by jcarpio-         ###   ########.fr        #
+#    Updated: 2019/03/21 10:45:18 by jcarpio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	:= fractol
 DNAME	:= d_$(NAME)
 SRC		:= main.c \
-			hooks.c
+			hooks.c \
+			julia.c \
+			color.c \
+			burning_ship.c \
+			tricorn.c \
+			key_hooks.c
 OBJ		:= $(SRC:.c=.o)
 
 CC		:= gcc
