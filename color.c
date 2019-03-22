@@ -6,13 +6,13 @@
 /*   By: jcarpio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 17:27:51 by jcarpio-          #+#    #+#             */
-/*   Updated: 2019/03/21 11:00:13 by jcarpio-         ###   ########.fr       */
+/*   Updated: 2019/03/21 17:23:32 by jcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		*color_array(int	a)
 {
-	static int		array[15];
+	static int	array[15];
 
 	array[0] = 0x421e0f / a;
 	array[1] = 0x19071a / a;

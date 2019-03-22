@@ -6,7 +6,7 @@
 #    By: jcarpio- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/02 13:30:58 by jcarpio-          #+#    #+#              #
-#    Updated: 2019/03/21 10:45:18 by jcarpio-         ###   ########.fr        #
+#    Updated: 2019/03/21 16:56:51 by jcarpio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRC		:= main.c \
 			color.c \
 			burning_ship.c \
 			tricorn.c \
-			key_hooks.c
+			key_hooks.c \
+			tools.c
 OBJ		:= $(SRC:.c=.o)
 
 CC		:= gcc

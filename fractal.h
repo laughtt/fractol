@@ -6,7 +6,7 @@
 /*   By: jcarpio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 14:20:48 by jcarpio-          #+#    #+#             */
-/*   Updated: 2019/03/21 11:08:40 by jcarpio-         ###   ########.fr       */
+/*   Updated: 2019/03/21 17:20:06 by jcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ typedef	struct		s_frac
 	int			cnbr;
 }					t_fract;
 
+int			ft_check_fractal(char *str, t_fract *frac);
 void		ft_color_change(t_fract *frac);
 void		ft_left(t_fract *frac);
 void		ft_right(t_fract *frac);

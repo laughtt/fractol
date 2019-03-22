@@ -6,12 +6,13 @@
 /*   By: jcarpio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 11:33:18 by jcarpio-          #+#    #+#             */
-/*   Updated: 2019/03/21 11:21:13 by jcarpio-         ###   ########.fr       */
+/*   Updated: 2019/03/21 18:21:08 by jcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractal.h"
 #include <math.h>
+#include <pthread.h>
 
 t_image			*create_image(t_win *win)
 {
@@ -128,7 +129,6 @@ void		ft_default_fract(t_fract *frac)
 	frac->disy = 0;
 	frac->xx = -0.70176;
 	frac->yy = -0.3842;
-	frac->numbf = 2;
 	frac->maxiter = ITERATIONS;
 	frac->cnbr = 1;
 }
@@ -141,26 +141,19 @@ int			main(int ac, char **argv)
 		return (0);
 	if (!(win = malloc(sizeof(t_win))))
 		return (0);
-	if (ac == 2)
+	if (ac == 2 && ft_check_fractal(argv[1], frac))
 	{
-		if (*argv[1] == 'a')
-			return (1);
 		frac->image = mlx_win_init(win);
 		frac->win = win;
-		if (1)
-		{
-			ft_default_fract(frac);
-			ft_draw_fractal(frac);
-		}
-		else if (0)
-			return (0);
+		ft_default_fract(frac);
+		ft_draw_fractal(frac);
 		mlx_put_image_to_window(win->mlx_ptr, win->win_ptr, frac->image->ptr, 0, 0);
 		mlx_hook(win->win_ptr , 4, 0 , mouse_hook, frac);
 		mlx_hook(win->win_ptr, 6, 0, mouse_move, frac);
 		mlx_key_hook(win->win_ptr, hook_keydown, frac);
 		mlx_loop(win->mlx_ptr);
-	//else
-	//	ft_putendl("Usage /fractol \"mandelbrot\", \"julia\", \"burningship\"");
 	}
+	else
+		ft_putendl("Usage /fractol \"mandelbrot\", \"julia\", \"burningship\" \"tricorn");
 	return (0);
 }                     

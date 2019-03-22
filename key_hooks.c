@@ -6,7 +6,7 @@
 /*   By: jcarpio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 10:38:14 by jcarpio-          #+#    #+#             */
-/*   Updated: 2019/03/21 11:24:26 by jcarpio-         ###   ########.fr       */
+/*   Updated: 2019/03/21 17:28:01 by jcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ft_left(t_fract *frac)
 void	ft_color_change(t_fract *frac)
 {
 	frac->cnbr = rand();
-	ft_bzero(frac->image->data, IMG_WIDTH * IMG_HEIGHT * frac->image->bpp);
+	ft_bzero(frac->image->data, IMG_WIDTH * IMG_HEIGHT * 4);
 	ft_draw_fractal(frac);
 	mlx_put_image_to_window(frac->win->mlx_ptr, frac->win->win_ptr, frac->image->ptr,0 ,0);
 }
