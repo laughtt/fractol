@@ -6,7 +6,7 @@
 #    By: jcarpio- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/02 13:30:58 by jcarpio-          #+#    #+#              #
-#    Updated: 2019/03/21 16:56:51 by jcarpio-         ###   ########.fr        #
+#    Updated: 2019/03/22 12:46:58 by jcarpio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,13 +19,16 @@ SRC		:= main.c \
 			burning_ship.c \
 			tricorn.c \
 			key_hooks.c \
-			tools.c
+			tools.c \
+			mandelbrot.c \
+			draw.c
 OBJ		:= $(SRC:.c=.o)
 
 CC		:= gcc
 CFLAGS	:= -Wall -Wextra -Werror
 DFLAGS	:= -Wall -Wextra -g
 AFLAGS	:= -fsanitize=address
+AMULTI  := -lpthread
 ## Libraries
 LIBFT = libft/libft.a
 LIBMLX = miniLibX/libmlx.a -framework OpenGL -framework AppKit
@@ -42,7 +45,7 @@ mlx:
 	make -sC miniLibX/
 
 $(NAME): 
-	$(CC) $(CFLAGS) $(LIB) $(SRC) -o $(NAME)
+	$(CC) $(CFLAGS) $(LIB) $(SRC) -o $(NAME) $(AMULTI)
 
 debug:
 	$(CC) $(DFLAGS) $(LIB) $(SRC) -o $(DNAME)

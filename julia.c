@@ -6,7 +6,7 @@
 /*   By: jcarpio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/19 15:38:30 by jcarpio-          #+#    #+#             */
-/*   Updated: 2019/03/21 11:02:56 by jcarpio-         ###   ########.fr       */
+/*   Updated: 2019/03/22 12:55:53 by jcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int				julia(t_fract *frac)
 		frac->x = a * a;
 		frac->y = b * b;
 		if (frac->x + frac->y > 4)
-			break;
+			break ;
 		real = 2.0f * a * b;
 		a = frac->x - frac->y - frac->xx;
 		b = real - frac->yy;

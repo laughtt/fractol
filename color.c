@@ -6,11 +6,11 @@
 /*   By: jcarpio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 17:27:51 by jcarpio-          #+#    #+#             */
-/*   Updated: 2019/03/21 17:23:32 by jcarpio-         ###   ########.fr       */
+/*   Updated: 2019/03/21 20:52:23 by jcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		*color_array(int	a)
+int		*color_array(int a)
 {
 	static int	array[15];
 
